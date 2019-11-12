@@ -1,6 +1,8 @@
 package sample;
 
+import java.sql.SQLOutput;
+
 public class Controller {
-    system.out.println("hello world");
+    System.out.println("hello wordl");
 
 }
