@@ -1,7 +1,9 @@
 package sample;
 
-public class Filme {
+import java.util.ArrayList;
 
+public class Filme {
+    private String nome;
     private boolean acao;
     private boolean aventura;
     private boolean drama;
@@ -11,6 +13,22 @@ public class Filme {
     private boolean documentario;
     private boolean comedia;
     private boolean pretobranco;
+    public static ArrayList<Filme> Movie = new ArrayList<>();
+
+    private void adicionaFilme(String nom, boolean ac, boolean av,boolean dr, boolean hi, boolean ro, boolean ci, boolean doc, boolean com, boolean pret){
+        Filme fil = new Filme();
+        fil.nome = nom;
+        fil.acao = ac;
+        fil.aventura = av;
+        fil.cientifico = ci;
+        fil.comedia = com;
+        fil.documentario = doc;
+        fil.drama = dr;
+        fil.historico = hi;
+        fil.romance = ro;
+        fil.pretobranco = pret;
+        Movie.add(fil);
+    }
 
     public boolean isAcao() {
         return acao;

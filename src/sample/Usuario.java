@@ -5,7 +5,7 @@ package sample;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Perfil {
+public class Usuario {
     private String nome;
     private int Id;
     private String sen;
@@ -20,7 +20,7 @@ public void curtidas(Musica n) {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Perfil perfil = (Perfil) o;
+        Usuario perfil = (Usuario) o;
         return Id == perfil.Id &&
                 nome.equals(perfil.nome) &&
                 sen.equals(perfil.sen);
@@ -53,7 +53,7 @@ public void curtidas(Musica n) {
         return sen;
     }
 
-    public Perfil(String nome, int id, String sen) {
+    public Usuario(String nome, int id, String sen) {
         this.nome = nome;
         Id = id;
         this.sen = sen;

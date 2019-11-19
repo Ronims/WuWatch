@@ -1,16 +1,45 @@
 package sample;
 
-public class Musica {
+import java.util.ArrayList;
 
-    private boolean rock;
-    private boolean pop;
-    private boolean rap;
-    private boolean kpop;
-    private boolean jpop;
-    private boolean indie;
-    private boolean heavymetal;
-    private boolean emo;
-    private boolean hiphop;
+public class Musica {
+    public String nome;
+    public boolean rock;
+    public boolean pop;
+    public boolean rap;
+    public boolean kpop;
+    public boolean jpop;
+    public boolean indie;
+    public boolean heavymetal;
+    public boolean emo;
+    public boolean hiphop;
+    public static ArrayList<Musica> Mu = new ArrayList<>();
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    private void adicionarmusicas(String nom, boolean r, boolean p, boolean j, boolean h, boolean i, boolean e, boolean o, boolean a, boolean k){
+        Musica M = new Musica();
+        M.nome = nom;
+        M.heavymetal = h;
+        M.emo = e;
+        M.rap = r;
+        M.kpop = k;
+        M.jpop = j;
+        M.indie = i;
+        Mu.add(M);
+    }
+    private void adicionando(){
+
+
+        adicionarmusicas("Eminem - Loseyourself",false,false,false,false,true,true,false,true,false);
+        adicionarmusicas("Linkin Park - In the End",true,false,false,false,true,false,false,true,false);
+    }
 
     public boolean getRock() {
         return rock;
