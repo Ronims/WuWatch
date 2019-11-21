@@ -8,7 +8,7 @@ public class Musica {
     public boolean pop;
     public boolean rap;
     public boolean kpop;
-    public boolean jpop;
+    public boolean mpb;
     public boolean indie;
     public boolean heavymetal;
     public boolean emo;
@@ -23,22 +23,9 @@ public class Musica {
         return nome;
     }
 
-    private void adicionarmusicas(String nom, boolean r, boolean p, boolean j, boolean h, boolean i, boolean e, boolean o, boolean a, boolean k){
-        Musica M = new Musica();
-        M.nome = nom;
-        M.heavymetal = h;
-        M.emo = e;
-        M.rap = r;
-        M.kpop = k;
-        M.jpop = j;
-        M.indie = i;
-        Mu.add(M);
-    }
-    private void adicionando(){
+    public static void adicionarmusicas(Musica n){
 
-
-        adicionarmusicas("Eminem - Loseyourself",false,false,false,false,true,true,false,true,false);
-        adicionarmusicas("Linkin Park - In the End",true,false,false,false,true,false,false,true,false);
+        Mu.add(n);
     }
 
     public boolean getRock() {
@@ -73,12 +60,12 @@ public class Musica {
         this.kpop = kpop;
     }
 
-    public boolean getJpop() {
-        return jpop;
+    public boolean getmpb() {
+        return mpb;
     }
 
-    public void setJpop(boolean jpop) {
-        this.jpop = jpop;
+    public void setmpb(boolean mpb) {
+        this.mpb = mpb;
     }
 
     public boolean getIndie() {

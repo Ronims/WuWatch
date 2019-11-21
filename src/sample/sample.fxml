@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.adicionaMusica">
+   <children>
+      <CheckBox fx:id="roc" layoutX="497.0" layoutY="21.0" mnemonicParsing="false" text="Rock" />
+      <CheckBox fx:id="pop" layoutX="497.0" layoutY="44.0" mnemonicParsing="false" text="pop" />
+      <CheckBox fx:id="rap" layoutX="497.0" layoutY="71.0" mnemonicParsing="false" prefWidth="39.0" text="rap" />
+      <CheckBox fx:id="kpo" layoutX="497.0" layoutY="98.0" mnemonicParsing="false" text="kpop" />
+      <CheckBox fx:id="mp" layoutX="495.0" layoutY="155.0" mnemonicParsing="false" text="mpb" />
+      <CheckBox fx:id="ind" layoutX="495.0" layoutY="183.0" mnemonicParsing="false" text="indie" />
+      <CheckBox fx:id="met" layoutX="498.0" layoutY="211.0" mnemonicParsing="false" text="heavy metal " />
+      <CheckBox fx:id="emo" layoutX="496.0" layoutY="239.0" mnemonicParsing="false" text="emo" />
+      <CheckBox fx:id="hip" layoutX="491.0" layoutY="131.0" mnemonicParsing="false" text="hip hop" />
+      <TextField fx:id="nom" layoutX="90.0" layoutY="179.0" prefHeight="25.0" prefWidth="342.0" />
+      <Label layoutX="142.0" layoutY="147.0" text="nome do da banda/cantor - nome da musica" />
+      <Button layoutX="286.0" layoutY="256.0" mnemonicParsing="false" onAction="#Adiciona" text="inserir" />
+   </children>
+</AnchorPane>

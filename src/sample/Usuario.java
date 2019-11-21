@@ -16,6 +16,7 @@ public void curtidas(Musica n) {
 
 
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
