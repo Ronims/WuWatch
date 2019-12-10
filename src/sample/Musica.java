@@ -1,8 +1,9 @@
 package sample;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Musica {
+public class Musica  implements Serializable {
     public String nome;
     public boolean rock;
     public boolean pop;

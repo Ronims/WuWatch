@@ -1,8 +1,9 @@
 package sample;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Filme {
+public class Filme implements Serializable {
     private String nome;
     private boolean acao;
     private boolean aventura;
@@ -28,6 +29,22 @@ public class Filme {
         fil.romance = ro;
         fil.pretobranco = pret;
         Movie.add(fil);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public static ArrayList<Filme> getMovie() {
+        return Movie;
+    }
+
+    public static void setMovie(ArrayList<Filme> movie) {
+        Movie = movie;
     }
 
     public boolean isAcao() {

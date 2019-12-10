@@ -2,13 +2,14 @@ package sample;
 
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Usuario {
+public class Usuario implements Serializable {
     private String nome;
     private int Id;
-    private String sen;
+    private String sen;//senha
     public  ArrayList<Musica> like = new ArrayList<>();
 public void curtidas(Musica n) {
     like.add(n);

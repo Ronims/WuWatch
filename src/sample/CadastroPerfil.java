@@ -1,8 +1,12 @@
 package sample;
 
-public class CadastroPerfil {
 
-    private void cadastrar(){
+import Data.Repo;
+
+public class CadastroPerfil {
+    private Repo repository= new Repo();
+
+    private void cadastrar(Usuario usuario){
 
     }
 }
