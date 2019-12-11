@@ -18,7 +18,7 @@
         <CheckBox fx:id="rom" layoutX="496.0" layoutY="239.0" mnemonicParsing="false" text="Romance" />
         <CheckBox fx:id="pret" layoutX="491.0" layoutY="131.0" mnemonicParsing="false" text="Preto e branco" />
         <TextField fx:id="nom" layoutX="90.0" layoutY="179.0" prefHeight="25.0" prefWidth="342.0" />
-        <Label layoutX="142.0" layoutY="147.0" text="nome do filme" />
+        <Label layoutX="142.0" layoutY="147.0" text="nomeM do filme" />
         <Button layoutX="286.0" layoutY="256.0" mnemonicParsing="false" onAction="#Adiciona" text="inserir" />
       <Button fx:id="s" layoutX="49.0" layoutY="26.0" mnemonicParsing="false" onAction="#Sair" text="sair" />
     </children>

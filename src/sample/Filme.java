@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Filme implements Serializable {
-    public static String nome;
+    public String nome;
     public boolean acao;
     public boolean aventura;
     public boolean drama;
@@ -17,12 +17,13 @@ public class Filme implements Serializable {
     public boolean comedia;
     public boolean pretobranco;
     public static ArrayList<Filme> Movie = new ArrayList<>();
-    public void adicionaFilme(Filme movie){
-        Movie.add(movie);
+    public void adicionaFilme(Filme movi){
+        System.out.print("\n"+ movi.nome +"\n");
+        Movie.add(movi);
     }
 
     @Contract(pure = true)
-    public static ArrayList<Filme> pegarFilmes(){
+    public ArrayList<Filme> pegarFilmes(){
         return(Movie);
     }
     public String getNome() {

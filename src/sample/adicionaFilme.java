@@ -1,15 +1,9 @@
 package sample;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 
 
 public class adicionaFilme {
@@ -42,7 +36,7 @@ public class adicionaFilme {
     }
     public void Adiciona(){
         Filme fim = new Filme();
-        fim.nome=nom.getText();
+        fim.nome =nom.getText();
         fim.aventura = av.isSelected();
         fim.acao = ac.isSelected();
         fim.drama = dra.isSelected();
@@ -53,6 +47,7 @@ public class adicionaFilme {
         fim.historico = his.isSelected();
         fim.pretobranco = pret.isSelected();
         fim.adicionaFilme(fim);
+
 
     }
 }

@@ -14,9 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import sample.Usuario;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,8 +46,8 @@ public class CadastroPerfil implements Initializable {
     private ObservableList<Musica> observableListMus;
     private ObservableList<Filme> observableListMov;
     private Repo repository= new Repo();
-    public static ArrayList<Filme> mo = new ArrayList<>();
-    public static ArrayList<Musica> ms = new ArrayList<>();
+    public  ArrayList<Filme> mo = new ArrayList<>();
+    public  ArrayList<Musica> ms = new ArrayList<>();
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Cadastro.fxml"));
         primaryStage.setScene(new Scene(root, 300, 275));
@@ -80,7 +78,7 @@ public class CadastroPerfil implements Initializable {
                 music = mus.getSelectionModel( ).getSelectedItem( );
                 ms.add(music);
                 selecionaTableMusica(music);
-                //aberto = Musica.pegaIndex(music.nome);
+                //aberto = Musica.pegaIndex(music.nomeM);
             }
         });
         fil.setOnMouseClicked((MouseEvent event) -> {
@@ -88,7 +86,7 @@ public class CadastroPerfil implements Initializable {
                 mov = fil.getSelectionModel( ).getSelectedItem( );
                 mo.add(mov);
                 selecionaTableFilme(mov);
-                //aberto = Musica.pegaIndex(music.nome);
+                //aberto = Musica.pegaIndex(music.nomeM);
             }
         });
 
@@ -96,8 +94,8 @@ public class CadastroPerfil implements Initializable {
      public void selecionaTableMusica(Musica mus){
          Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
          alerta.setTitle("Confirmação de adição");
-         alerta.setHeaderText(Musica.nome + " foi selecionada!");
-         alerta.setContentText("deseja prosseguir com a adição de"+ Musica.nome + "?");
+         alerta.setHeaderText(mus.nomeM + " foi selecionada!");
+         alerta.setContentText("deseja prosseguir com a adição de"+ mus.nomeM + "?");
          Optional<ButtonType> action = alerta.showAndWait();
          if (action.get( ) == ButtonType.OK) {
 
@@ -110,8 +108,8 @@ public class CadastroPerfil implements Initializable {
         mo.add(fil);
         Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
         alerta.setTitle("Confirmação de adição");
-        alerta.setHeaderText(Filme.nome + " foi selecionada!");
-        alerta.setContentText("deseja prosseguir com a adição de"+ Filme.nome + "?");
+        alerta.setHeaderText(fil.nome + " foi selecionada!");
+        alerta.setContentText("deseja prosseguir com a adição de" + fil.nome + "?");
         Optional<ButtonType> action = alerta.showAndWait();
         if (action.get( ) == ButtonType.OK) {
 
@@ -133,7 +131,7 @@ public class CadastroPerfil implements Initializable {
         listMusic.clear();
         mus.setEditable(false);
         listMusic.addAll(som);
-        estMus.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        estMus.setCellValueFactory(new PropertyValueFactory<>("nomeM"));
         observableListMus = FXCollections.observableArrayList(listMusic);
         mus.setItems(observableListMus);
 
@@ -147,19 +145,10 @@ public class CadastroPerfil implements Initializable {
         fil.setItems(observableListMov);
     }
     public void iniciar(){
-
-        ArrayList<Musica> m = Musica.pegarMusicas();
-        ArrayList<Filme> f = Filme.pegarFilmes();
-        System.out.print(f);
-        System.out.print("\n sem");
-        System.out.println(f);
-        System.out.print("\n ln");
-        System.out.print(m);
-        System.out.print("\n ln");
-        System.out.print(m);
-        System.out.print("\n sem");
-        carregarFilme(f);
-        carregarMusica(m);
+        Filme fir = new Filme();
+        Musica mr = new Musica();
+        carregarFilme(fir.pegarFilmes());
+        carregarMusica(mr.pegarMusicas());
 
     }
 }

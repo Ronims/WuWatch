@@ -1,20 +1,8 @@
 package Data;
 
-import javafx.scene.control.Alert;
 import sample.Filme;
 import sample.Musica;
 import sample.Usuario;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
-import java.io.Serializable;
-import java.util.ArrayList;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -59,7 +47,7 @@ public  class Repo implements Serializable {
 
         try{
             for(i=0;i<DadosMusica.size();i++) {
-                if (m.getNome().equals(getDadosMusica().get(i).getNome())) {
+                if (m.getNomeM().equals(getDadosMusica().get(i).getNomeM())) {
                     System.out.println("Musica encontrada");
                 } else {
                     System.out.println("Música não encontrada");

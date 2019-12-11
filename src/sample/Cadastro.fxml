@@ -19,7 +19,7 @@
             </TableView>
             <PasswordField fx:id="senha" layoutX="59.0" layoutY="193.0" />
             <Label layoutX="117.0" layoutY="170.0" text="Senha" />
-            <Button fx:id="cad" layoutX="59.0" layoutY="230.0" mnemonicParsing="false" text="Cadastrar" />
+            <Button fx:id="cad" layoutX="59.0" layoutY="230.0" mnemonicParsing="false" onAction="#adicionar" text="Cadastrar" />
             <Button fx:id="canc" layoutX="146.0" layoutY="230.0" mnemonicParsing="false" text="Cancelar" />
             <TextField fx:id="name" layoutX="59.0" layoutY="138.0" />
             <Label layoutX="117.0" layoutY="112.0" text="Nome" />
