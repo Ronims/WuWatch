@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Musica  implements Serializable {
-    public static String nome;
+    public String nomeM;
     public boolean rock;
     public boolean pop;
     public boolean rap;
@@ -16,21 +16,22 @@ public class Musica  implements Serializable {
     public boolean heavymetal;
     public boolean emo;
     public boolean hiphop;
-    public static ArrayList<Musica> Mu = new ArrayList<>();
+    public  static ArrayList<Musica> Mu = new ArrayList<>();
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeM(String nomeM) {
+        this.nomeM = nomeM;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeM() {
+        return nomeM;
     }
 
-    public static void adicionarmusicas(Musica n){
+    public  void adicionarmusicas(Musica n){
+        System.out.println("\n" + n.nomeM +"\n");
         Mu.add(n);
     }
     @Contract(pure = true)
-    public static ArrayList<Musica> pegarMusicas(){
+    public ArrayList<Musica> pegarMusicas(){
 
         return(Mu);
     }
