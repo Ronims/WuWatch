@@ -47,7 +47,7 @@ public  class Repo implements Serializable {
 
         try{
             for(i=0;i<DadosMusica.size();i++) {
-                if (m.getNomeM().equals(getDadosMusica().get(i).getNomeM())) {
+                if (m.getNome().equals(getDadosMusica().get(i).getNome())) {
                     System.out.println("Musica encontrada");
                 } else {
                     System.out.println("Música não encontrada");
@@ -106,7 +106,10 @@ public  class Repo implements Serializable {
     }
 
 
-    public Repo() {
+    public Repo(Repo repo) {
+    }
+    public Repo(){
+
     }
 
 
