@@ -7,12 +7,56 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    private static Stage stage;
+    private static Scene Navegar;
+    private static Scene Cadas;
+    private static Scene Fil;
+    private static Scene Mu;
 
-    @Override
+
+   // @Override
+   // public void start(Stage primaryStage) throws Exception{
+     //   Parent root = FXMLLoader.load(getClass().getResource("navegar.fxml"));
+     //   primaryStage.setScene(new Scene(root, 300, 275));
+     //   primaryStage.show();
+    //}
+   @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setScene(new Scene(root, 300, 275));
+        stage = primaryStage;
+        primaryStage.setTitle("WuWatch");
+        Parent fxmlnav = FXMLLoader.load(getClass().getResource("Navegar.fxml"));
+        Navegar=new Scene(fxmlnav, 800, 400);
+        Parent fxmlCad = FXMLLoader.load(getClass().getResource("Cadastro.fxml"));
+        Cadas=new Scene(fxmlCad, 800, 400);
+        Parent fxmlFil = FXMLLoader.load(getClass().getResource("adicionarFilme.fxml"));
+        Fil=new Scene(fxmlFil, 800, 400);
+        Parent fxmlMu = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Mu=new Scene(fxmlMu, 800, 400);
+
+
+
+
+        primaryStage.setScene(Navegar);
         primaryStage.show();
+    }
+        CadastroPerfil cad = new CadastroPerfil();
+    public static void NavSc(String scr){
+        switch (scr) {
+            case("1"):
+
+                stage.setScene(Navegar);
+                break;
+            case("2"):
+                stage.setScene(Cadas);
+                break;
+            case("3"):
+                stage.setScene(Mu);
+                break;
+            case("4"):
+                stage.setScene(Fil);
+                break;
+            }
+
     }
 
 

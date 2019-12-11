@@ -1,36 +1,30 @@
 package sample;
 
+import org.jetbrains.annotations.Contract;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Filme implements Serializable {
-    private String nome;
-    private boolean acao;
-    private boolean aventura;
-    private boolean drama;
-    private boolean historico;
-    private boolean romance;
-    private boolean cientifico;
-    private boolean documentario;
-    private boolean comedia;
-    private boolean pretobranco;
+    public static String nome;
+    public boolean acao;
+    public boolean aventura;
+    public boolean drama;
+    public boolean historico;
+    public boolean romance;
+    public boolean cientifico;
+    public boolean documentario;
+    public boolean comedia;
+    public boolean pretobranco;
     public static ArrayList<Filme> Movie = new ArrayList<>();
-
-    private void adicionaFilme(String nom, boolean ac, boolean av,boolean dr, boolean hi, boolean ro, boolean ci, boolean doc, boolean com, boolean pret){
-        Filme fil = new Filme();
-        fil.nome = nom;
-        fil.acao = ac;
-        fil.aventura = av;
-        fil.cientifico = ci;
-        fil.comedia = com;
-        fil.documentario = doc;
-        fil.drama = dr;
-        fil.historico = hi;
-        fil.romance = ro;
-        fil.pretobranco = pret;
-        Movie.add(fil);
+    public void adicionaFilme(Filme movie){
+        Movie.add(movie);
     }
 
+    @Contract(pure = true)
+    public static ArrayList<Filme> pegarFilmes(){
+        return(Movie);
+    }
     public String getNome() {
         return nome;
     }
@@ -39,6 +33,7 @@ public class Filme implements Serializable {
         this.nome = nome;
     }
 
+    @Contract(pure = true)
     public static ArrayList<Filme> getMovie() {
         return Movie;
     }

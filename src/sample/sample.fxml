@@ -20,5 +20,6 @@
       <TextField fx:id="nom" layoutX="90.0" layoutY="179.0" prefHeight="25.0" prefWidth="342.0" />
       <Label layoutX="142.0" layoutY="147.0" text="nome do da banda/cantor - nome da musica" />
       <Button layoutX="286.0" layoutY="256.0" mnemonicParsing="false" onAction="#Adiciona" text="inserir" />
+      <Button fx:id="s" layoutX="38.0" layoutY="26.0" mnemonicParsing="false" onAction="#Sair" text="sair" />
    </children>
 </AnchorPane>

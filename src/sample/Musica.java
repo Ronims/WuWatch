@@ -1,10 +1,12 @@
 package sample;
 
+import org.jetbrains.annotations.Contract;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Musica  implements Serializable {
-    public String nome;
+    public static String nome;
     public boolean rock;
     public boolean pop;
     public boolean rap;
@@ -25,8 +27,12 @@ public class Musica  implements Serializable {
     }
 
     public static void adicionarmusicas(Musica n){
-
         Mu.add(n);
+    }
+    @Contract(pure = true)
+    public static ArrayList<Musica> pegarMusicas(){
+
+        return(Mu);
     }
 
     public boolean getRock() {

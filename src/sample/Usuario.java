@@ -6,19 +6,22 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Usuario implements Serializable {
-    private String nome;
-    private int Id;
-    private String sen;//senha
+public class Usuario{
+    public String nome;
+    public String Id;
+    public String sen;//senha
     public  ArrayList<Musica> like = new ArrayList<>();
+    public  ArrayList<Filme> movie = new ArrayList<>();
+    public static ArrayList<Usuario> usu = new ArrayList<>();
 public void curtidas(Musica n) {
     like.add(n);
 }
 
+    public static void adicionarUsuario(Usuario usario){
 
-
-
-    @Override
+    usu.add(usario);
+}
+ @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -35,9 +38,7 @@ public void curtidas(Musica n) {
         this.nome = nome;
     }
 
-    public void setId(int id) {
-        Id = id;
-    }
+
 
     public void setSen(String sen) {
         this.sen = sen;
@@ -47,18 +48,16 @@ public void curtidas(Musica n) {
         return nome;
     }
 
-    public int getId() {
-        return Id;
-    }
+
 
     public String getSen() {
         return sen;
     }
-
-    public Usuario(String nome, int id, String sen) {
-        this.nome = nome;
-        Id = id;
-        this.sen = sen;
+    public String getId() {
+        return Id;
     }
 
+    public void setId(String id) {
+        Id = id;
+    }
 }
