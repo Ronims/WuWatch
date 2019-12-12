@@ -12,7 +12,7 @@ public class Usuario{
     public  ArrayList<Musica> like = new ArrayList<>();
     public  ArrayList<Filmes> movie = new ArrayList<>();
     public  ArrayList<Usuario> userFriends = new ArrayList<>();
-    public static int rk,pp,rp,ie,mb,eo,hl,hp;
+    public static int rk,pp,rp,ie,mb,eo,hl,hp;//lista de generos q o usuario gosta, toda musica q chegar no like do usuario vai ser comparada, se for true vai encrementando e depois adicionando o usuario no arraylist de usuarios
     public  ArrayList<Usuario> getUser() {
         return userFriends;
     }
@@ -27,7 +27,35 @@ public void curtidas(Musica n) {
 }
 
     public static void adicionarUsuario(Usuario usario){
-    gostos();
+
+    ArrayList<Musica> ar =usario.like;
+        for(Musica m : ar){
+            if (m.rock){
+                usario.rk++;
+            }
+            if (m.pop){
+                usario.pp++;
+            }
+            if (m.rap){
+                usario.rp++;
+            }
+            if (m.indie){
+                usario.ie++;
+            }
+            if (m.mpb){
+                usario.mb++;
+            }
+            if (m.emo){
+                usario.eo++;
+            }
+            if (m.heavymetal){
+                usario.hl++;
+            }
+            if (m.hiphop){
+                usario.hp++;
+            }
+        }
+
     usu.add(usario);
 }
     public boolean comparaLogin(String log, String pass){
@@ -44,32 +72,7 @@ public void curtidas(Musica n) {
 }
     public static void gostos(){
     Usuario ar = new Usuario();
-     for(Musica m : ar.like){
-         if (m.rock){
-             rk++;
-         }
-         if (m.pop){
-             pp++;
-         }
-         if (m.rap){
-             rp++;
-         }
-         if (m.indie){
-             ie++;
-         }
-         if (m.mpb){
-             mb++;
-         }
-         if (m.emo){
-             eo++;
-         }
-         if (m.heavymetal){
-             hl++;
-         }
-         if (m.hiphop){
-             hp++;
-         }
-     }
+
     }
  @Override
     public boolean equals(Object o) {
