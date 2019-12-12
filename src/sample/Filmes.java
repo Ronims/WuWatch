@@ -5,7 +5,7 @@ import org.jetbrains.annotations.Contract;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Filme implements Serializable {
+public class Filmes implements Serializable {
     public String nome;
     public boolean acao;
     public boolean aventura;
@@ -16,14 +16,14 @@ public class Filme implements Serializable {
     public boolean documentario;
     public boolean comedia;
     public boolean pretobranco;
-    public static ArrayList<Filme> Movie = new ArrayList<>();
-    public void adicionaFilme(Filme movi){
+    public static ArrayList<Filmes> Movie = new ArrayList<>();
+    public void adicionaFilme(Filmes movi){
         System.out.print("\n"+ movi.nome +"\n");
         Movie.add(movi);
     }
 
     @Contract(pure = true)
-    public ArrayList<Filme> pegarFilmes(){
+    public ArrayList<Filmes> pegarFilmes(){
         return(Movie);
     }
     public String getNome() {
@@ -35,11 +35,11 @@ public class Filme implements Serializable {
     }
 
     @Contract(pure = true)
-    public static ArrayList<Filme> getMovie() {
+    public static ArrayList<Filmes> getMovie() {
         return Movie;
     }
 
-    public static void setMovie(ArrayList<Filme> movie) {
+    public static void setMovie(ArrayList<Filmes> movie) {
         Movie = movie;
     }
 

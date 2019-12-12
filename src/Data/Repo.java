@@ -1,6 +1,6 @@
 package Data;
 
-import sample.Filme;
+import sample.Filmes;
 import sample.Musica;
 import sample.Usuario;
 
@@ -9,15 +9,15 @@ import java.util.ArrayList;
 
 
 public  class Repo implements Serializable {
-    private  ArrayList<Filme> DadosFilme= new ArrayList<Filme>();
+    private  ArrayList<Filmes> DadosFilme= new ArrayList<Filmes>();
     private  ArrayList<Musica> DadosMusica= new ArrayList<Musica>();
     private   ArrayList<Usuario> DadosUsuario= new ArrayList<Usuario>();
 
-    public ArrayList<Filme> getDadosFilme() {
+    public ArrayList<Filmes> getDadosFilme() {
         return DadosFilme;
     }
 
-    public void setDadosFilme(ArrayList<Filme> dadosFilme) {
+    public void setDadosFilme(ArrayList<Filmes> dadosFilme) {
         DadosFilme = dadosFilme;
     }
 
@@ -39,6 +39,39 @@ public  class Repo implements Serializable {
 
 
 
+    public  void adcionarGente(Usuario g){
+        this.DadosUsuario.add(g);
+    }
+    public  Usuario buscarGente(Usuario g){
+        int i;
+
+        try{
+            for(i=0;i<DadosUsuario.size();i++) {
+                if (g.getNome().equals(getDadosUsuario( ).get(i).getNome())) {
+                    System.out.println("Usuario encontrada");
+                } else {
+                    System.out.println("Usuario não encontrada");
+                    return null;
+                }
+            }
+        }catch(Exception e){
+            System.out.println("Erro: Um erro inesperado ocorreu. ");
+            return null;
+        }
+        return g;
+    }
+    public void removerGente(Usuario g){
+        int i;
+        try{
+            Usuario usuario = buscarGente(g);
+            if(usuario!=null){
+                this.DadosUsuario.remove(g);
+            }
+        }catch(Exception e){
+
+        }
+    }
+    
     public  void adcionarMusica(Musica m){
         this.DadosMusica.add(m);
     }
@@ -47,7 +80,7 @@ public  class Repo implements Serializable {
 
         try{
             for(i=0;i<DadosMusica.size();i++) {
-                if (m.getNome().equals(getDadosMusica().get(i).getNome())) {
+                if (m.getNomeM().equals(getDadosMusica( ).get(i).getNomeM())) {
                     System.out.println("Musica encontrada");
                 } else {
                     System.out.println("Música não encontrada");
@@ -72,18 +105,19 @@ public  class Repo implements Serializable {
         }
     }
 
-    public  void adcionarFilme(Filme f){
+
+    public  void adcionarFilme(Filmes f){
         this.DadosFilme.add(f);
     }
-    public  Filme buscarFilme(Filme f){
+    public Filmes buscarFilme(Filmes f){
         int i;
 
         try{
             for(i=0;i<DadosFilme.size();i++) {
                 if (f.getNome().equals(getDadosFilme().get(i).getNome())) {
-                    System.out.println("Musica encontrada");
+                    System.out.println("Filmes encontrada");
                 } else {
-                    System.out.println("Música não encontrada");
+                    System.out.println("Filmes não encontrada");
                     return null;
                 }
             }
@@ -93,10 +127,10 @@ public  class Repo implements Serializable {
         }
         return f;
     }
-    public void removerFilme(Filme f){
+    public void removerFilme(Filmes f){
         int i;
         try{
-            Filme filme = buscarFilme(f);
+            Filmes filme = buscarFilme(f);
             if(filme!=null){
                 this.DadosFilme.remove(f);
             }

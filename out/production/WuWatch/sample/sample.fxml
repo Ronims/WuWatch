@@ -18,7 +18,8 @@
       <CheckBox fx:id="emo" layoutX="496.0" layoutY="239.0" mnemonicParsing="false" text="emo" />
       <CheckBox fx:id="hip" layoutX="491.0" layoutY="131.0" mnemonicParsing="false" text="hip hop" />
       <TextField fx:id="nom" layoutX="90.0" layoutY="179.0" prefHeight="25.0" prefWidth="342.0" />
-      <Label layoutX="142.0" layoutY="147.0" text="nome do da banda/cantor - nome da musica" />
+      <Label layoutX="142.0" layoutY="147.0" text="nomeM do da banda/cantor - nomeM da musica" />
       <Button layoutX="286.0" layoutY="256.0" mnemonicParsing="false" onAction="#Adiciona" text="inserir" />
+      <Button fx:id="s" layoutX="73.0" layoutY="32.0" mnemonicParsing="false" onAction="#Sair" text="sair" />
    </children>
 </AnchorPane>

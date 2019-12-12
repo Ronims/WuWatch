@@ -5,7 +5,7 @@ import org.jetbrains.annotations.Contract;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Musica  implements Serializable {
+public class Musica implements Serializable {
     public String nomeM;
     public boolean rock;
     public boolean pop;
@@ -16,7 +16,7 @@ public class Musica  implements Serializable {
     public boolean heavymetal;
     public boolean emo;
     public boolean hiphop;
-    public  static ArrayList<Musica> Mu = new ArrayList<>();
+    public static ArrayList<Musica> Mu = new ArrayList<>();
 
     public void setNomeM(String nomeM) {
         this.nomeM = nomeM;
@@ -108,4 +108,6 @@ public class Musica  implements Serializable {
         this.hiphop = hiphop;
     }
 
+    public void getNome() {
+    }
 }

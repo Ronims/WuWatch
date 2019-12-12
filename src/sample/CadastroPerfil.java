@@ -2,6 +2,7 @@ package sample;
 
 
 import Data.Repo;
+import Data.SalvaArquivo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,16 +39,16 @@ public class CadastroPerfil implements Initializable {
     @FXML
     private TableView<Musica> mus;
     @FXML
-    private TableView<Filme> fil;
+    private TableView<Filmes> fil;
     @FXML
-    private TableColumn<Filme, String> estfil;
+    private TableColumn<Filmes, String> estfil;
     @FXML
     private TableColumn<Musica, String> estMus;
 
     private ObservableList<Musica> observableListMus;
-    private ObservableList<Filme> observableListMov;
+    private ObservableList<Filmes> observableListMov;
     private Repo repository= new Repo();
-    public  ArrayList<Filme> mo = new ArrayList<>();
+    public  ArrayList<Filmes> mo = new ArrayList<>();
     public  ArrayList<Musica> ms = new ArrayList<>();
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Cadastro.fxml"));
@@ -60,14 +62,14 @@ public class CadastroPerfil implements Initializable {
         Main.NavSc("1");
     }
     private List<Musica> listMusic = new ArrayList<>( );
-    private List<Filme> listMovie = new ArrayList<>( );
+    private List<Filmes> listMovie = new ArrayList<>( );
 
 
 
 
 
     Musica music = new Musica( );
-    Filme mov = new Filme( );
+    Filmes mov = new Filmes( );
     static int aberto;
 
     @Override
@@ -104,7 +106,7 @@ public class CadastroPerfil implements Initializable {
          }
         ms.add(mus);
      }
-    public void selecionaTableFilme(Filme fil){
+    public void selecionaTableFilme(Filmes fil){
         mo.add(fil);
         Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
         alerta.setTitle("Confirmação de adição");
@@ -127,6 +129,14 @@ public class CadastroPerfil implements Initializable {
         usu.movie=mo;
         Usuario.adicionarUsuario(usu);
     }
+    public void arquivar() throws IOException {
+        Filmes mr = new Filmes();
+        SalvaArquivo sa = new SalvaArquivo();
+        List<Filmes> listF = new ArrayList<>( );
+        listF.addAll(mr.pegarFilmes());
+        sa.saveDataFilme(listF);
+
+    }
     public void carregarMusica (ArrayList <Musica> som) {//população das tabelas internas da table list
         listMusic.clear();
         mus.setEditable(false);
@@ -136,7 +146,7 @@ public class CadastroPerfil implements Initializable {
         mus.setItems(observableListMus);
 
     }
-    public void carregarFilme (ArrayList <Filme> filmes) {//população das tabelas internas da table list
+    public void carregarFilme (ArrayList <Filmes> filmes) {//população das tabelas internas da table list
         listMovie.clear();
         fil.setEditable(false);
         listMovie.addAll(filmes);
@@ -145,7 +155,7 @@ public class CadastroPerfil implements Initializable {
         fil.setItems(observableListMov);
     }
     public void iniciar(){
-        Filme fir = new Filme();
+        Filmes fir = new Filmes();
         Musica mr = new Musica();
         carregarFilme(fir.pegarFilmes());
         carregarMusica(mr.pegarMusicas());

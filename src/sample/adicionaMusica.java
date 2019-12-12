@@ -1,5 +1,6 @@
 package sample;
 
+import Data.Repo;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
@@ -33,6 +34,7 @@ public class adicionaMusica {
 
 
     public void Adiciona(){
+        Repo rep = new Repo();
         Musica mus = new Musica();
         mus.nomeM =nom.getText();
         mus.mpb = mp.isSelected();
@@ -42,6 +44,7 @@ public class adicionaMusica {
         mus.pop = pop.isSelected();
         mus.rock = roc.isSelected();
         mus.emo = emo.isSelected();
+        rep.adcionarMusica(mus);
         mus.adicionarmusicas(mus);
 
 

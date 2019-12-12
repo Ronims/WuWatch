@@ -11,8 +11,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import Data.Repo;
+import sample.Filmes;
 
 import java.io.ObjectOutputStream;
+import java.util.List;
 
 public class SalvaArquivo implements Serializable {
 
@@ -25,17 +27,13 @@ public class SalvaArquivo implements Serializable {
         //obviamente para funcionar é bom preencher algum arraylist antes(usando a CRUD da classe Repo)
         //é bom refatorar depois a classe Repo e renomear para Repositorio
 
-        public void saveDataFilme(String file) throws IOException {
-
-            File archive = new File(file);
+        public void saveDataFilme(List file) throws IOException {
+            File archive = new File("C:\\Users\\7\\Downloads\\WuWatch\\arquivo\\ essa merda.txt");//"C:\\Users\\7\\Downloads\\WuWatch\\arquivo\\ essa merda.txt"
             FileOutputStream fos = new FileOutputStream(archive);
             ObjectOutputStream ous = new ObjectOutputStream(fos);
-            ous.writeObject(bufferData);
+            ous.writeObject(file);
             ous.close();
         }
-
-
-
         //métodos de load de arquivos
         // ass. Darllan
 

@@ -1,9 +1,15 @@
 package sample;
 
+import Data.Repo;
+import Data.SalvaArquivo;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class adicionaFilme {
@@ -34,8 +40,11 @@ public class adicionaFilme {
     public void Sair(){
         Main.NavSc("1");
     }
-    public void Adiciona(){
-        Filme fim = new Filme();
+
+    public void Adiciona() throws IOException {
+        SalvaArquivo sa = new SalvaArquivo();
+        Filmes fim = new Filmes();
+        Repo rep = new Repo();
         fim.nome =nom.getText();
         fim.aventura = av.isSelected();
         fim.acao = ac.isSelected();
@@ -46,8 +55,11 @@ public class adicionaFilme {
         fim.romance = rom.isSelected();
         fim.historico = his.isSelected();
         fim.pretobranco = pret.isSelected();
+        List<Filmes> listF = new ArrayList<>( );
+        listF.addAll(fim.pegarFilmes());
+        sa.saveDataFilme(listF);
         fim.adicionaFilme(fim);
-
-
+        rep.adcionarFilme(fim);
     }
+
 }

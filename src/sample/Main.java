@@ -16,7 +16,7 @@ public class Main extends Application {
 
    // @Override
    // public void start(Stage primaryStage) throws Exception{
-     //   Parent root = FXMLLoader.load(getClass().getResource("navegar.fxml"));
+     //   Parent root = FXMLLoader.load(getClass().getResource("Nave.fxml"));
      //   primaryStage.setScene(new Scene(root, 300, 275));
      //   primaryStage.show();
     //}
@@ -24,11 +24,11 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
         primaryStage.setTitle("WuWatch");
-        Parent fxmlnav = FXMLLoader.load(getClass().getResource("Navegar.fxml"));
-        Navegar=new Scene(fxmlnav, 800, 400);
+        Parent fxNavegar = FXMLLoader.load(getClass().getResource("Nave.fxml"));
+        Navegar=new Scene(fxNavegar, 900, 500);
         Parent fxmlCad = FXMLLoader.load(getClass().getResource("Cadastro.fxml"));
         Cadas=new Scene(fxmlCad, 800, 400);
-        Parent fxmlFil = FXMLLoader.load(getClass().getResource("adicionarFilme.fxml"));
+        Parent fxmlFil = FXMLLoader.load(getClass().getResource("Adicionarfilme.fxml"));
         Fil=new Scene(fxmlFil, 800, 400);
         Parent fxmlMu = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Mu=new Scene(fxmlMu, 800, 400);
@@ -43,7 +43,6 @@ public class Main extends Application {
     public static void NavSc(String scr){
         switch (scr) {
             case("1"):
-
                 stage.setScene(Navegar);
                 break;
             case("2"):
