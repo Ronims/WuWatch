@@ -1,15 +1,8 @@
-package sample;
+package controladores;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import sample.CadastroPerfil;
-import javafx.stage.Stage;
-
-
-
+import sample.Main;
 
 
 public class Navegar {

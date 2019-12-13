@@ -1,4 +1,4 @@
-package sample;
+package controladores;
 
 import Data.Repo;
 import Data.SalvaArquivo;
@@ -6,6 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import sample.Filmes;
+import sample.Main;
+import sample.controladorRepo;
 
 import java.io.IOException;
 import java.util.ArrayList;

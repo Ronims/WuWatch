@@ -16,7 +16,7 @@ public class controladorRepo{
         public void cadastrarMusica(Musica m){
             rep.getDadosMusica().add(m);
         }
-         void cadastrarFilme(Filmes f){
+         public void cadastrarFilme(Filmes f){
             rep.getDadosFilme().add(f);
         }
 

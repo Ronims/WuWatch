@@ -1,4 +1,4 @@
-package sample;
+package controladores;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,6 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import sample.*;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -130,9 +131,11 @@ public class Principal {
         Filmes fir = new Filmes();
         Musica mr = new Musica();
         Usuario us = new Usuario();
+        compara com = new compara();
         carregarFilme(fir.pegarFilmes());
         carregarMusica(mr.pegarMusicas());
-        carregarUsuario(us.pegarUsuarios());
+        com.comparando(us);
+        carregarUsuario(com.comparando(us));
     }
     public void sair(){
         Main.NavSc("1");

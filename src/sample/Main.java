@@ -1,5 +1,6 @@
 package sample;
 
+import controladores.CadastroPerfil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,7 +9,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
     private static Stage stage;
-    private static Scene Navegar;
+    private static Scene navegar;
     private static Scene Cadas;
     private static Scene Fil;
     private static Scene Mu;
@@ -17,7 +18,7 @@ public class Main extends Application {
 
    // @Override
    // public void start(Stage primaryStage) throws Exception{
-     //   Parent root = FXMLLoader.load(getClass().getResource("Nave.fxml"));
+     //   Parent root = FXMLLoader.load(getClass().getResource("Navegation.fxml"));
      //   primaryStage.setScene(new Scene(root, 300, 275));
      //   primaryStage.show();
     //}
@@ -25,30 +26,30 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
         primaryStage.setTitle("WuWatch");
-        Parent fxNavegar = FXMLLoader.load(getClass().getResource("Nave.fxml"));
-        Navegar=new Scene(fxNavegar, 900, 500);
-        Parent fxmlCad = FXMLLoader.load(getClass().getResource("Cadastro.fxml"));
+        Parent fxNa = FXMLLoader.load(getClass().getResource("../cenas/Navegation.fxml"));
+        navegar = new Scene(fxNa, 900, 500);
+        Parent fxmlCad = FXMLLoader.load(getClass().getResource("../cenas/Cadastro.fxml"));
         Cadas=new Scene(fxmlCad, 800, 400);
-        Parent fxmlFil = FXMLLoader.load(getClass().getResource("Adicionarfilme.fxml"));
+        Parent fxmlFil = FXMLLoader.load(getClass().getResource("../cenas/Adicionarfilme.fxml"));
         Fil=new Scene(fxmlFil, 800, 400);
-        Parent fxmlMu = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent fxmlMu = FXMLLoader.load(getClass().getResource("../cenas/sample.fxml"));
         Mu=new Scene(fxmlMu, 800, 400);
-       Parent fxmlPl = FXMLLoader.load(getClass().getResource("Principal.fxml"));
-       pl=new Scene(fxmlPl, 800, 400);
-       Parent fxmlLog = FXMLLoader.load(getClass().getResource("Login.fxml"));
-       log=new Scene(fxmlLog, 800, 400);
+        Parent fxPrincipal = FXMLLoader.load(getClass().getResource("../cenas/Principal.fxml"));
+        pl=new Scene(fxPrincipal, 800, 400);
+        Parent fxLog = FXMLLoader.load(getClass().getResource("../cenas/Login.fxml"));
+        log=new Scene(fxLog, 800, 400);
 
 
 
 
-        primaryStage.setScene(Navegar);
+        primaryStage.setScene(navegar);
         primaryStage.show();
     }
         CadastroPerfil cad = new CadastroPerfil();
     public static void NavSc(String scr){
         switch (scr) {
             case("1"):
-                stage.setScene(Navegar);
+                stage.setScene(navegar);
                 break;
             case("2"):
                 stage.setScene(Cadas);

@@ -1,4 +1,4 @@
-package sample;
+package controladores;
 
 
 import Data.Repo;
@@ -15,6 +15,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import sample.Filmes;
+import sample.Main;
+import sample.Musica;
+import sample.Usuario;
 
 import java.io.IOException;
 import java.net.URL;

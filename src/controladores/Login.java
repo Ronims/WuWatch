@@ -1,7 +1,9 @@
-package sample;
+package controladores;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import sample.Main;
+import sample.Usuario;
 
 public class Login {
     @FXML
@@ -16,7 +18,10 @@ public class Login {
         ua.sen = senN.getText();
         bate = ua.comparaLogin(ua.nome,ua.sen);
         if(bate==true){
-            //chama a cena de Principal
+            Main.NavSc("5");
+        }
+        else{
+            Main.NavSc("1");
         }
 
 
