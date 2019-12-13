@@ -128,7 +128,7 @@ public class CadastroPerfil implements Initializable {
         SalvaArquivo sa = new SalvaArquivo();
         List<Filmes> listF = new ArrayList<>( );
         listF.addAll(mr.pegarFilmes());
-        //sa.saveDataFilme(listF);
+        sa.saveData("foda-se");
 
     }
     public void carregarMusica (ArrayList <Musica> som) {//população das tabelas internas da table list

@@ -42,9 +42,9 @@ public class adicionaFilme {
     }
 
     public void Adiciona() throws IOException {
-        SalvaArquivo sa = new SalvaArquivo();
         Filmes fim = new Filmes();
         Repo rep = new Repo();
+        controladorRepo cr = new controladorRepo();
         fim.nome =nom.getText();
         fim.aventura = av.isSelected();
         fim.acao = ac.isSelected();
@@ -55,9 +55,7 @@ public class adicionaFilme {
         fim.romance = rom.isSelected();
         fim.historico = his.isSelected();
         fim.pretobranco = pret.isSelected();
-        List<Filmes> listF = new ArrayList<>( );
-        listF.addAll(fim.pegarFilmes());
-       // sa.saveDataFilme(listF);
+        cr.cadastrarFilme(fim);
         fim.adicionaFilme(fim);
         rep.adcionarFilme(fim);
     }

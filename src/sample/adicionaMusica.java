@@ -32,10 +32,10 @@ public class adicionaMusica {
         Main.NavSc("1");
     }
 
-
     public void Adiciona(){
         Repo rep = new Repo();
         Musica mus = new Musica();
+        controladorRepo cr = new controladorRepo();
         mus.nomeM =nom.getText();
         mus.mpb = mp.isSelected();
         mus.indie = ind.isSelected();
@@ -44,6 +44,7 @@ public class adicionaMusica {
         mus.pop = pop.isSelected();
         mus.rock = roc.isSelected();
         mus.emo = emo.isSelected();
+        cr.cadastrarMusica(mus);
         rep.adcionarMusica(mus);
         mus.adicionarmusicas(mus);
 
