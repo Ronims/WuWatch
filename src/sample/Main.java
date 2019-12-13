@@ -12,7 +12,8 @@ public class Main extends Application {
     private static Scene Cadas;
     private static Scene Fil;
     private static Scene Mu;
-
+    private static Scene pl;
+    private static Scene log;
 
    // @Override
    // public void start(Stage primaryStage) throws Exception{
@@ -32,6 +33,10 @@ public class Main extends Application {
         Fil=new Scene(fxmlFil, 800, 400);
         Parent fxmlMu = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Mu=new Scene(fxmlMu, 800, 400);
+       Parent fxmlPl = FXMLLoader.load(getClass().getResource("Principal.fxml"));
+       pl=new Scene(fxmlPl, 800, 400);
+       Parent fxmlLog = FXMLLoader.load(getClass().getResource("Login.fxml"));
+       log=new Scene(fxmlLog, 800, 400);
 
 
 
@@ -54,7 +59,14 @@ public class Main extends Application {
             case("4"):
                 stage.setScene(Fil);
                 break;
+            case("5"):
+                stage.setScene(pl);
+                break;
+            case("6"):
+                stage.setScene(log);
+                break;
             }
+
 
     }
 

@@ -114,4 +114,9 @@ public void curtidas(Musica n) {
     public void setId(String id) {
         Id = id;
     }
+
+    public ArrayList<Usuario> pegarUsuarios() {
+        return (usu);
+    }
+
 }

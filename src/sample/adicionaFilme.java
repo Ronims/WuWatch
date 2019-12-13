@@ -57,7 +57,7 @@ public class adicionaFilme {
         fim.pretobranco = pret.isSelected();
         List<Filmes> listF = new ArrayList<>( );
         listF.addAll(fim.pegarFilmes());
-        sa.saveDataFilme(listF);
+       // sa.saveDataFilme(listF);
         fim.adicionaFilme(fim);
         rep.adcionarFilme(fim);
     }

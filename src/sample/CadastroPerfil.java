@@ -50,11 +50,6 @@ public class CadastroPerfil implements Initializable {
     private Repo repository= new Repo();
     public  ArrayList<Filmes> mo = new ArrayList<>();
     public  ArrayList<Musica> ms = new ArrayList<>();
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Cadastro.fxml"));
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
-    }
     @FXML
     private Button s;
 
@@ -70,7 +65,6 @@ public class CadastroPerfil implements Initializable {
 
     Musica music = new Musica( );
     Filmes mov = new Filmes( );
-    static int aberto;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -134,7 +128,7 @@ public class CadastroPerfil implements Initializable {
         SalvaArquivo sa = new SalvaArquivo();
         List<Filmes> listF = new ArrayList<>( );
         listF.addAll(mr.pegarFilmes());
-        sa.saveDataFilme(listF);
+        //sa.saveDataFilme(listF);
 
     }
     public void carregarMusica (ArrayList <Musica> som) {//população das tabelas internas da table list

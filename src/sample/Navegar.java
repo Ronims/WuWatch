@@ -28,7 +28,7 @@ public class Navegar {
         }
 
     public void Filme(){
-        Main.NavSc("4");
+        Main.NavSc("6");
     }
     public void Gente(){
 
