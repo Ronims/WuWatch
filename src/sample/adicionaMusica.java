@@ -32,7 +32,6 @@ public class adicionaMusica {
         Main.NavSc("1");
     }
 
-
     public void Adiciona(){
         Repo rep = new Repo();
         Musica mus = new Musica();

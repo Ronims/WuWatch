@@ -42,6 +42,7 @@ public class adicionaFilme {
     }
 
     public void Adiciona() throws IOException {
+        controladorRepo cr = new controladorRepo();
         SalvaArquivo sa = new SalvaArquivo();
         Filmes fim = new Filmes();
         Repo rep = new Repo();
@@ -57,9 +58,12 @@ public class adicionaFilme {
         fim.pretobranco = pret.isSelected();
         List<Filmes> listF = new ArrayList<>( );
         listF.addAll(fim.pegarFilmes());
-        sa.saveDataFilme(listF);
         fim.adicionaFilme(fim);
         rep.adcionarFilme(fim);
+        sa.setBufferData(rep);
+        sa.saveData("foda-se.txt");
+
+
     }
 
 }

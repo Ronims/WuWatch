@@ -21,14 +21,20 @@ public class SalvaArquivo implements Serializable {
 
         public Repo bufferData=new Repo();
 
+    public Repo getBufferData() {
+        return bufferData;
+    }
 
-        //para testar tu vai ter que chamar o metodo de salvar e colocar como parametro o nome do arquivo .txt
+    public void setBufferData(Repo bufferData) {
+        this.bufferData = bufferData;
+    }
+    //para testar tu vai ter que chamar o metodo de salvar e colocar como parametro o nome do arquivo .txt
         // exemplo: "teste.txt"
         //obviamente para funcionar é bom preencher algum arraylist antes(usando a CRUD da classe Repo)
         //é bom refatorar depois a classe Repo e renomear para Repositorio
 
-        public void saveDataFilme(List file) throws IOException {
-            File archive = new File("C:\\Users\\7\\Downloads\\WuWatch\\arquivo\\ essa merda.txt");//"C:\\Users\\7\\Downloads\\WuWatch\\arquivo\\ essa merda.txt"
+        public void saveData(String file) throws IOException {
+            File archive = new File(file);
             FileOutputStream fos = new FileOutputStream(archive);
             ObjectOutputStream ous = new ObjectOutputStream(fos);
             ous.writeObject(file);

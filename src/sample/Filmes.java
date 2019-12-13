@@ -1,6 +1,6 @@
 package sample;
 
-import org.jetbrains.annotations.Contract;
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -22,7 +22,6 @@ public class Filmes implements Serializable {
         Movie.add(movi);
     }
 
-    @Contract(pure = true)
     public ArrayList<Filmes> pegarFilmes(){
         return(Movie);
     }
@@ -34,7 +33,6 @@ public class Filmes implements Serializable {
         this.nome = nome;
     }
 
-    @Contract(pure = true)
     public static ArrayList<Filmes> getMovie() {
         return Movie;
     }

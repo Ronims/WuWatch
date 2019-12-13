@@ -1,6 +1,6 @@
 package sample;
 
-import org.jetbrains.annotations.Contract;
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -30,7 +30,6 @@ public class Musica implements Serializable {
         System.out.println("\n" + n.nomeM +"\n");
         Mu.add(n);
     }
-    @Contract(pure = true)
     public ArrayList<Musica> pegarMusicas(){
 
         return(Mu);
