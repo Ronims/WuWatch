@@ -2,10 +2,11 @@ package sample;
 
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Usuario{
+public class Usuario implements Serializable {
     public String nome;
     public String Id;
     public String sen;//senha
